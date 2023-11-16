@@ -1,0 +1,39 @@
+main {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr  1fr;
+    grid-template-areas:
+    "header header  header  header  header"
+    "aside  section section section section"
+    "footer footer  footer  footer  footer";
+    row-gap: 0;
+    column-gap: 0;
+    grid-template-rows: 20% 70% 10%;
+    height: 98vh;
+}
+
+header {
+    grid-area: header;
+    background-color: #8dc3d8;
+    margin-top: 0.1em;
+    margin-left: 0.5em;
+    margin-right: 1.5em;
+}
+aside {
+    grid-area: aside;
+
+}
+section {
+    grid-area: section;
+
+    margin-top: 1em;
+    margin-left: 0.2em;
+    margin-right: 1em;
+}
+
+
+
+footer {
+    grid-area: footer;
+
+}

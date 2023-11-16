@@ -1,0 +1,48 @@
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a 
+      pButton 
+      pRipple
+      label="Crear Producto" 
+      icon="pi pi-shopping-bag"
+      class="bg-cyan-600"
+      [routerLink]="['/crear-producto']">
+    </a>
+</div>
+
+<div>
+    <p-toast></p-toast>
+</div>
+
+<p-table [value]="productos">
+
+    <ng-template pTemplate="header">
+        
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Stock minimo</th>
+            <th>Cantidad</th>
+            <th>Tipo producto</th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.nombre}}</td>
+            <td>{{product.marca}}</td>
+            <td>{{product.precio}}</td>
+            <td>{{product.stockmin}}</td>
+            <td>{{product.cantidad}}</td>
+            <td>{{product.tipoproducto}}</td>
+            <td>
+                <p-button icon="pi pi-print" class="mr-1"></p-button>
+                <p-button icon="pi pi-sync" class="mx-1"></p-button>
+                <p-button icon="pi pi-eraser" class="mx-1"></p-button>
+
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
