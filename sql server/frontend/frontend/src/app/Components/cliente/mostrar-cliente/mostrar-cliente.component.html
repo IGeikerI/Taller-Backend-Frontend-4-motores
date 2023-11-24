@@ -1,0 +1,82 @@
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+    <a 
+      pButton 
+      pRipple
+      label="Crear Clientes" 
+      icon="pi pi-user-plus"
+      class="bg-cyan-600"
+      [routerLink]="['/crear-cliente']">
+    </a>
+
+
+</div>
+<div>
+    <p-toast></p-toast>
+</div>
+<p-table [value]="clientes">
+    <ng-template pTemplate="header">
+        
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Correo</th>
+            <th>Contraseña</th>
+            
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-client>
+        <tr>
+            <td>{{client.id}}</td>
+            <td>{{client.nombreCliente}}</td>
+            <td>{{client.direccionCliente}}</td>
+            <td>{{client.telefonoCliente}}</td>
+            <td>{{client.correoCliente}}</td>
+            <td>{{client.passwordCliente}}</td>
+            <td>
+                <p-button icon="pi pi-print" class="mr-1"></p-button>
+                <p-button icon="pi pi-sync" class="mx-1"></p-button>
+                <p-button icon="pi pi-eraser" class="mx-1"></p-button>
+
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-clientes>
+        <tr>
+            <td>{{clientes.id}}</td>
+            <td>{{clientes.nombreCliente}}</td>
+            <td>{{clientes.direccionCliente}}</td>
+            <td>{{clientes.telefonoCliente}}</td>
+            <td>{{clientes.correoCliente}}</td>
+            <td>
+                <button 
+                    pButton 
+                    pRipple
+                    icon="pi pi-print"
+                    class="bg-cyan-600  mr-1"
+                    (click)="imprimir(clientes.id)">
+                </button>
+
+                <a 
+                pButton 
+                pRipple
+                icon="pi pi-sync"
+                class="bg-cyan-600  mr-1"
+                [routerLink]="['/actualizar-cliente', clientes.id]">
+                </a>
+
+                <button 
+                type="button"
+                 pButton 
+                 pRipple
+                 icon="pi pi-eraser"
+                 class="bg-cyan-600  mr-1"
+                 (click)="eliminar(clientes.id)">
+                </button>
+
+
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
